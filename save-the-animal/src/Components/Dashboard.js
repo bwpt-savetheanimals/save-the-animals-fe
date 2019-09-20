@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Axios from "axios";
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import UserLogin from './User';
+
 
 
 function Dashboard() {
@@ -14,13 +14,6 @@ function Dashboard() {
         Axios
             .get(`https://reqres.in/api/users/${username}`)
             .then((res) => {
-                  {username.map((users) => (
-                    <div key={users.id}>
-                        <div>Name: {users.username}</div>
-                        
-                        </div>
-
-                ))}
                 setUser(res.data.username);
                 console.log(res.data.username)
             })
@@ -31,6 +24,8 @@ function Dashboard() {
     return (
         <div>
            <Route path='/dashboard' component={UserLogin}></Route>
+           <button>Donate Here</button>
+           <Link to='donate' type='submit'>Donate</Link>
         </div>
     )
 }
