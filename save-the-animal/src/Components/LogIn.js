@@ -4,7 +4,9 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Axios from "axios";
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
+
+import Dashboard from './Dashboard';
 
 const StyledField = styled(Field)`
 padding: 10px;
@@ -54,6 +56,7 @@ function LoginForm({ errors, touched, status }) {
                 </div> */}
                 <StyledButton type='submit'>Submit</StyledButton>
                 <Link to='dashboard' type='submit'>Submit</Link>
+                <Route path='/dashboard' component={Dashboard}>Submit</Route>
                   {user.map((users) => (
                     <div key={users.id}>
                         <div>Name: {users.username}</div>
