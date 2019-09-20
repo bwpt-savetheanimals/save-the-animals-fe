@@ -8,7 +8,7 @@ function UserLogin(props) {
     return (
         <div>
            <Link to="dashboard"> </Link>
-           <h1>Welcome {props.username}</h1>
+           <h1>Welcome {props.username} User!</h1>
         </div>
     );
 }

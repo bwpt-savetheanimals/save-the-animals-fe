@@ -1,21 +1,24 @@
 import React from 'react';
 import DonateForm from './DonateForm'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
 
 import SignUp from './SignUp'
-
-import './App.css';
+import WelcomePage from './Components/Welcome';
 import FormikUserForm from './Components/LogIn';
 import Dashboard from './Components/Dashboard';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+
 
 function App() {
   return (
 
     <div className="App">
-     <DonateForm/>
-      <FormikUserForm />
+      <Route exact path="/" component={WelcomePage} />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/login" component={FormikUserForm} />
       <Route path="/dashboard" component={Dashboard}/>
-   <SignUp />
+     <Route path="/donate" component={DonateForm}/>
     </div>
   );
 }
