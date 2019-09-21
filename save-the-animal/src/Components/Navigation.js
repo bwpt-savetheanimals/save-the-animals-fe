@@ -12,8 +12,8 @@ const Navigation = () => {
   return (
     <div>
       <div className="navigation">
-        <h1>Save The Animals</h1>
-        <div>
+        
+      <div>
         <Link to="/">Home</Link>
         </div>
         <div>
