@@ -1,26 +1,46 @@
 import React, {useState, useEffect} from 'react';
 import {withFormik, Form, Field} from 'formik';
+import styled from 'styled-components'
 import * as yup from 'yup'
+import axios from 'axios'
 import './App.css';
 
-function SignUp({status}) {
+
+
+const StyledField = styled(Field)`
+padding: 10px;
+margin: 15px auto;
+`
+
+
+
+
+function SignUp({status, touched, errors}) {
   console.log(status)
   const [people, setPeople] = useState([])
 
   useEffect(() => {
+    if(status)
     setPeople(...people,status)
-  },[])
+  },[people])
   return (
    <Form>
-     <Field type="text" name='person' placeholder="*Username" />
+     <h1>Sign Up</h1>
+     {touched.username && errors.username && <p className="error"> {errors.username}</p>}
+     <StyledField type="text" name='username' placeholder="*Username" />
 
-     <Field type="email" name='email' placeholder="*Email" />
-     <Field type="text" name='person' placeholder="*Password" />
+     {touched.email && errors.email && <p className="error"> {errors.email}</p>}
+     <StyledField type="email" name='email' placeholder="*Email" />
+
+     {touched.password && errors.password && <p className="error"> {errors.password}</p>}
+     <StyledField type="password" name='person' placeholder="*Password" />
+
      <label>
-     <Field type="radial" name='Terms of Service' placeholder="Terms of Service" />
+       
+     <StyledField type="checkbox" name='Terms of Service' placeholder="Terms of Service" />
      <span>Term of Service</span>
      </label>
-     <button>Submit</button>
+     <button type='button' disabled>Submit</button>
 
     
 
@@ -29,19 +49,35 @@ function SignUp({status}) {
 }
 
 export default withFormik({
-  mapPropsToValues: (values) => {
+  mapPropsToValues: ({username, email, password, termsOfService }) => {
     return {
-      name: values.name || '',
-      email: values.email || '',
-      password: values.password || '',
-      termsOfService: values.termsOfService || false
+      name: username || '',
+      email: email || '',
+      password: password || '',
+      termsOfService: termsOfService || false
     
     }
   },
   validationSchema: yup.object().shape({
     name: yup.string().required("Please enter Username"),
-    email:yup.string().required("Please enter valid email"),
-    password:yup.string().required("Please enter password"),
+    email:yup.string()
+    .email()
+    .required("Please enter valid email"),
+    password:yup.string()
+    .required("Please enter password")
+    .min('Password is too short-should be 8 characters minimum')
+    .matches(/(?=.*[0-9])/),
     termsOfService: yup.bool().required()
-  })
+  }),
+      handleSubmit: (values, {setStatus}) => {
+        axios.post('https://reqres.in/api/users',values)
+        .then((res) => {
+            setStatus(res.data)
+            // console.log(res)
+        })
+        .catch(err => {
+            console.log('Error', err.response)
+        })
+    }
+  
 })(SignUp);
