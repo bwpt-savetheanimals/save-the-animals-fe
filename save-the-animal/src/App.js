@@ -1,7 +1,8 @@
 import React from 'react';
-import DonateForm from './DonateForm'
-
+import DonateForm from './Components/DonateForm'
+import Navigation from './Components/Navigation'
 import SignUp from './SignUp'
+import LogIn from './Components/LogIn'
 
 import './App.css';
 import FormikUserForm from './Components/LogIn';
@@ -12,10 +13,17 @@ function App() {
   return (
 
     <div className="App">
-     <DonateForm/>
-      <FormikUserForm />
+      <Navigation />
+      
+      <Route path="/DonateForm" component={DonateForm} />
+      
+      <Route path="/Signup" component={SignUp} />
+
+      <Route path="/Login" component={LogIn} />
+       
+     
       <Route path="/dashboard" component={Dashboard}/>
-   <SignUp />
+      <FormikUserForm />
     </div>
   );
 }
