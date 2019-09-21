@@ -16,13 +16,13 @@ function App() {
 
     <div className="App">
 
-      <Navigation />
+      
       <Route exact path="/" component={WelcomePage} />
       <Route path="/signup" component={SignUp} />
       <Route path="/login" component={FormikUserForm} />
       <Route path="/dashboard" component={Dashboard}/>
      <Route path="/donate" component={DonateForm}/>
-
+     <Navigation />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import * as Yup from "yup";
 
 function DonationForm(errors,touched) {
   return (
+    <div><h1>Save The Animals</h1>
     <Form>
          {touched.username && errors.username && <p>{errors.username}</p>}
       <Field type="text" name="username" placeholder="Username" />
@@ -17,7 +18,7 @@ function DonationForm(errors,touched) {
       
       <button>Submit!</button>
 
-    </Form>
+    </Form></div>
   );
 }
 const FormikDonationForm = withFormik({
