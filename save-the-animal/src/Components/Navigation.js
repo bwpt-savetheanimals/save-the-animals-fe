@@ -6,7 +6,7 @@ const Navigation = () => {
       <div className="navigation">
         <h1>Save The Animals</h1>
         <div>
-        <Link to="/"> Home</Link>
+        <Link to="/">Home</Link>
         </div>
         <div>
         <Link to="/SignUp">Sign Up</Link>
@@ -15,7 +15,10 @@ const Navigation = () => {
         <Link to="/LogIn">Login</Link>
         </div>
         <div>
-        <Link to="/DonateForm">Donate</Link>
+        <Link to="/Dasboard">DashBoard</Link>
+        </div>
+        <div>
+        <Link to="/Donate">Donatate</Link>
         </div>
       </div>
     </div>
