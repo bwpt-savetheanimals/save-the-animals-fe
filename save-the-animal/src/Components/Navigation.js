@@ -18,18 +18,21 @@ const Navigation = () => {
 
           <NavLink to ="/">Home</NavLink>
       <NavLink to="/signup">Sign Up</NavLink>
-        <div>
+        
         <NavLink to="/LogIn">Login</NavLink>
-        </div>
-        <div>
+       
+        <NavLink to="/CampaignLogin">CampaignLogin</NavLink>
+        
+        
+       
         <Link to="/dashboard">Dashboard</Link>
-        </div>
-        <div>
+       
+        
         <NavLink  to="/Donate">Donate</NavLink>
-        </div>
-        <div>
+        
+       
         <NavLink  to="/Chat">Send Us A Question</NavLink>
-        </div>
+       
       </div>
     </div>
   );

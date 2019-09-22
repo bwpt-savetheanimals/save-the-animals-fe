@@ -12,7 +12,7 @@ import CampaignForm from './Components/Campaign/CampaignForm';
 import CampaignDashboard from './Components/CampaignDashboard';
 import PrivateRouteCD from './Components/PrivateRouteCD';
 
-
+import CampaignLogin from './Components/CampaignLogin';
 function App() {
   return (
 
@@ -23,6 +23,7 @@ function App() {
       <Route path="/signup" component={SignUp} />
       <Route path="/login" component={FormikUserForm} />
       <Route path="/dashboard" component={Dashboard}/>
+      <Route path="/CampaignLogin" component={CampaignLogin}/>
       <PrivateRouteCD path="/Cdashboard" component={CampaignDashboard}/>
      <Route path="/donate" component={DonateForm}/>
      <Route path="/chat"component={Chat}/>
