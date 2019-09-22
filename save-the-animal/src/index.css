@@ -13,7 +13,7 @@ code {
 }
 
 
-form {
+/* form {
   display: inline-flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -23,7 +23,7 @@ form {
   margin: 100px;
 
   
-}
+} */
 input{
   width: 200px;
   padding: 15px 22px;

@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+
 const fakeAuth = {
     isAuthenticated: false,
     authenticate(cb) {
       this.isAuthenticated = true
       setTimeout(cb, 100) // fake async
     }}
-
 
 const Navigation = () => {
   return (
@@ -17,7 +19,7 @@ const Navigation = () => {
         <NavLink to="/LogIn">Login</NavLink>
         </div>
         <div>
-        <NavLink  to="/Dasboard">DashBoard</NavLink>
+        <Link to="/dashboard">Dashboard</Link>
         </div>
         <div>
         <NavLink  to="/Donate">Donate</NavLink>
