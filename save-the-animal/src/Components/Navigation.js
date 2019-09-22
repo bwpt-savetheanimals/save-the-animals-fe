@@ -1,5 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+
+
+
+
+
+
+
+
 const Navigation = () => {
   return (
     <div>
@@ -9,12 +17,15 @@ const Navigation = () => {
         <Link to="/">Home</Link>
         </div>
         <div>
+
         <Link to="/dashboard">Dashboard</Link>
+
         </div>
         <div>
         <Link to="/Cdashboard">Campaign Dashboard</Link>
         </div>
         <div>
+
         <Link to="/donate">Donate</Link>
         </div>
       </div>
