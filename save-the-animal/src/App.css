@@ -37,16 +37,20 @@
   width: 100%;
   background-color: #555;
   overflow: auto;
+  display:flex;
+  justify-content: space-around;
 }
 
 /* Navbar links */
 .navbar a {
-  float: left;
+  display:flex;
+  
   text-align: center;
   padding: 12px;
   color: white;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 15px;
+
 }
 
 /* Navbar links on mouse-over */
@@ -60,9 +64,9 @@
 }
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 400x) {
+@media screen and (max-width: 500x) {
   .navbar a {
     float: none;
-    display: block;
+    display:flex;
   }
 }
