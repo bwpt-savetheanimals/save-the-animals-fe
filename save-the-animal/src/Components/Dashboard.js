@@ -4,6 +4,7 @@ import Axios from "axios";
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import UserLogin from './User';
+import Navigation from './Navigation'
 
 
 
@@ -28,6 +29,8 @@ function Dashboard() {
     // }, []);
 
     return (
+        <div>
+        <Navigation/>
         <div className="App">
          
             {/* {username.map((user) => 
@@ -41,6 +44,7 @@ function Dashboard() {
            <button>Donate Here</button>
            <Link to='donate' type='submit'>Donate</Link>
             
+        </div>
         </div>
     );
 }

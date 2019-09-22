@@ -1,10 +1,11 @@
 import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
+import Navigation from './Navigation'
 
 function DonationForm(errors,touched) {
   return (
-    <div><h1>Save The Animals</h1>
+  <div> <Navigation/>
 
        <Form>
          {touched.username && errors.username && <p>{errors.username}</p>}

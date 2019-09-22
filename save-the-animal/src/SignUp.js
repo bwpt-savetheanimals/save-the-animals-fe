@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import * as yup from 'yup'
 import axios from 'axios'
 import './App.css';
-
+import Navigation from './Components/Navigation'
 
 
 const StyledField = styled(Field)`
@@ -24,6 +24,7 @@ function SignUp({status, touched, errors}) {
     setPeople(...people,status)
   },[people])
   return (
+    <div><Navigation/>
    <Form>
      <h1>Sign Up</h1>
      {touched.username && errors.username && <p className="error"> {errors.username}</p>}
@@ -45,6 +46,7 @@ function SignUp({status, touched, errors}) {
     
 
    </Form>
+   </div>
   );
 }
 
