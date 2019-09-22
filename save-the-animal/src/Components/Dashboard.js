@@ -8,26 +8,42 @@ import UserLogin from './User';
 
 
 function Dashboard() {
-    const [ username, setUser ] = useState([])
+    // const [ username, setUser ] = useState([])
 
-    useEffect(() => {
-        Axios
-            .get(`https://reqres.in/api/users/${username}`)
-            .then((res) => {
-                setUser(res.data.username);
-                console.log(res.data.username)
-            })
-            .catch((error) => {
-                console.log(error)
-            });
-    }, []);
+
+    // useEffect(() => {
+      
+    //     Axios
+    //         .get('https://swapi.co/api/people/')
+    //         .then((res) => {
+    //             setUser(res.data.results);
+    //             console.log(res.data)
+    //         })
+    //         .catch((error) => {
+    //             console.log(error)
+    //         });
+    
+
+  
+    // }, []);
+
     return (
-        <div>
+        <div className="App">
+         
+            {/* {username.map((user) => 
+                <UserLogin key={user.id} users={user.id}/> )} */}
+
+{/*                   
+      {username.map((name) =>
+        <UserLogin name={name.name} key={name.name} />)} */}
+          
            <Route path='/dashboard' component={UserLogin}></Route>
            <button>Donate Here</button>
            <Link to='donate' type='submit'>Donate</Link>
+            
         </div>
-    )
+    );
 }
+
 
 export default Dashboard;

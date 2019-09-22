@@ -17,16 +17,16 @@ const Navigation = () => {
         <Link to="/">Home</Link>
         </div>
         <div>
-        <Link to="/SignUp"></Link>
+
+        <Link to="/dashboard">Dashboard</Link>
+
         </div>
         <div>
-        <Link to="/LogIn">Login</Link>
+        <Link to="/Cdashboard">Campaign Dashboard</Link>
         </div>
         <div>
-        <Link to="/Dasboard">DashBoard</Link>
-        </div>
-        <div>
-        <Link to="/Donate">Donate</Link>
+
+        <Link to="/donate">Donate</Link>
         </div>
       </div>
     </div>

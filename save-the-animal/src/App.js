@@ -8,6 +8,8 @@ import './App.css';
 import WelcomePage from './Components/Welcome';
 import FormikUserForm from './Components/LogIn';
 import Dashboard from './Components/Dashboard';
+import CampaignForm from './Components/Campaign/CampaignForm';
+import CampaignDashboard from './Components/CampaignDashboard';
 
 
 
@@ -21,8 +23,13 @@ function App() {
       <Route path="/signup" component={SignUp} />
       <Route path="/login" component={FormikUserForm} />
       <Route path="/dashboard" component={Dashboard}/>
+      <Route path="/Cdashboard" component={CampaignDashboard}/>
      <Route path="/donate" component={DonateForm}/>
-     <Navigation />
+
+     <Route path="/campaign" component={CampaignForm}/>
+     
+     
+
     </div>
   );
 }
