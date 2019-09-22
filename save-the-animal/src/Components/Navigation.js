@@ -1,32 +1,31 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 
-
-
-
-
-
+const fakeAuth = {
+    isAuthenticated: false,
+    authenticate(cb) {
+      this.isAuthenticated = true
+      setTimeout(cb, 100) // fake async
+    }}
 
 const Navigation = () => {
   return (
     <div>
       <div className="navigation">
-        
-      <div>
-        <Link to="/">Home</Link>
+      <NavLink to="/signup">Sign Up</NavLink>
+        <div>
+        <NavLink to="/LogIn">Login</NavLink>
         </div>
         <div>
-
         <Link to="/dashboard">Dashboard</Link>
-
         </div>
         <div>
-        <Link to="/Cdashboard">Campaign Dashboard</Link>
+        <NavLink  to="/Donate">Donate</NavLink>
         </div>
         <div>
-
-        <Link to="/donate">Donate</Link>
+        <NavLink  to="/Chat">Send Us A Question</NavLink>
         </div>
       </div>
     </div>

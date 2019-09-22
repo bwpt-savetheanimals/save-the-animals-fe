@@ -1,5 +1,6 @@
 import React from 'react';
 import DonateForm from './Components/DonateForm'
+import Chat from './Components/Chat'
 import Navigation from './Components/Navigation'
 import SignUp from './SignUp'
 import './App.css';
@@ -10,7 +11,7 @@ import FormikUserForm from './Components/LogIn';
 import Dashboard from './Components/Dashboard';
 import CampaignForm from './Components/Campaign/CampaignForm';
 import CampaignDashboard from './Components/CampaignDashboard';
-
+import PrivateRouteCD from './Components/PrivateRouteCD';
 
 
 function App() {
@@ -23,9 +24,9 @@ function App() {
       <Route path="/signup" component={SignUp} />
       <Route path="/login" component={FormikUserForm} />
       <Route path="/dashboard" component={Dashboard}/>
-      <Route path="/Cdashboard" component={CampaignDashboard}/>
+      <PrivateRouteCD path="/Cdashboard" component={CampaignDashboard}/>
      <Route path="/donate" component={DonateForm}/>
-
+     <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={CampaignForm}/>
      
      
