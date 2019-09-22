@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useSocket from 'use-socket.io-client';
 import { useImmer } from 'use-immer';
-
+import Navigation from './Navigation'
 
 
 const Messages = props => props.data.map(m => m[0] !== '' ? (<li><strong>{m[0]}</strong> : <div className="innermsg">{m[1]}</div></li>) : (<li className="update">{m[1]}</li>) );
@@ -20,6 +20,7 @@ export default () => {
   const [messages, setMessages] = useImmer([]);
   const [online, setOnline] = useImmer([]);
 
+  
   useEffect(()=>{
     socket.on('message que',(nick,message) => {
       setMessages(draft => {
@@ -72,6 +73,7 @@ export default () => {
   };
 
   return id ? (
+     
     <section style={{display:'flex',flexDirection:'row'}} >
       <ul id="messages"><Messages data={messages} /></ul>
       <ul id="online"> &#x1f310; : <Online data={online} /> </ul>
@@ -80,8 +82,11 @@ export default () => {
             <input id="m" onChange={e=>setInput(e.target.value.trim())} /><button style={{width:'75px'}} type="submit">Send</button>
         </form>
       </div>
+      
     </section>
+   
   ) : (
+      <div> <Navigation/>
     <div style={{ textAlign: 'center', margin: '30vh auto', width: '70%' }}>
       <form onSubmit={event => handleSubmit(event)}>
         <input id="name" onChange={e => setNameInput(e.target.value.trim())} required placeholder="What is your name .." /><br />
@@ -89,6 +94,7 @@ export default () => {
         <input id="email" onChange={e => setRoom(e.target.value.trim())} placeholder="Your Email Address..." /><br />
         <button type="submit">Submit</button>
       </form>
+    </div>
     </div>
   );
 };

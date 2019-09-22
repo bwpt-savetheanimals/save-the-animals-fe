@@ -1,7 +1,6 @@
 import React from 'react';
 import DonateForm from './Components/DonateForm'
 import Chat from './Components/Chat'
-import Navigation from './Components/Navigation'
 import SignUp from './SignUp'
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
