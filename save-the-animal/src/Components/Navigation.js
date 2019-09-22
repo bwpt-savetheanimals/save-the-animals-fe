@@ -13,6 +13,7 @@ const fakeAuth = {
 const Navigation = () => {
   return (
     <div>
+        <div><h1>Save The Animals!!</h1></div> 
       <div className="navigation">
       <NavLink to="/signup">Sign Up</NavLink>
         <div>
