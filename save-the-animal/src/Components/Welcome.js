@@ -9,8 +9,8 @@ function WelcomePage() {
         <div>
         <h1>Save The Animals!!!</h1>
          <Navigation/>
-            <Link to="/signup">Sign up</Link>
-            <Link to="login">Log In</Link>
+            <h3><Link to="/signup">Sign up</Link> Here.</h3>
+            <h3>Already have an account? <Link to="login">Login</Link> here</h3>
         </div>
     )
 }

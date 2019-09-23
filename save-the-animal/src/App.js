@@ -10,11 +10,8 @@ import FormikUserForm from './Components/LogIn';
 import Dashboard from './Components/Dashboard';
 import CampaignForm from './Components/Campaign/CampaignForm';
 import CampaignDashboard from './Components/CampaignDashboard';
-<<<<<<< HEAD
 import Data from './Components/Campaign/CampaignData';
-=======
 import PrivateRouteCD from './Components/PrivateRouteCD';
->>>>>>> master
 
 import CampaignLogin from './Components/CampaignLogin';
 function App() {
@@ -33,6 +30,7 @@ function App() {
      <Route path="/donate" component={DonateForm}/>
      <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={CampaignForm}/>
+     <Data />
     
 
      

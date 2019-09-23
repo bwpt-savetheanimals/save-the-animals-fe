@@ -12,9 +12,6 @@ padding: 10px;
 margin: 15px auto;
 `
 
-
-
-
 function SignUp({status, touched, errors}) {
   console.log(status)
   const [people, setPeople] = useState([])

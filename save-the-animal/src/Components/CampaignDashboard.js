@@ -20,8 +20,9 @@ function CampaignDashboard() {
          
 
       <h1>Campaign!</h1>     
-           <Route path='/dashboard' component={FormikCampaign}></Route>
+           <Route path='/Cdashboard' component={Data}></Route>
            <FormikCampaign />
+           <Data />
            
            </div>  
         </div>
