@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+}
+
+form {
+  width: 400px;
+  margin: 100px auto 50px;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  text-align: left;
+  background-color: #80AB82;
+  border: 2px solid #F7F7F2;
+  border-radius: 8px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Bitter', serif;
+
+}
+
+.error {
+  margin: -5px;
+  position: absolute;
+  color: #681A21;
+  background-color: #919098;
+  border-color: #919098;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 10px;
+
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #546A7B;
+}
+
+input,
+textarea {
+  margin-top: 32px;
+  padding: 0.5rem;
+  font-size: 15px;
+  width: 100%;
+  max-width: 375px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.field {
+  margin: 20px auto;
+  
+  }

@@ -1,39 +1,41 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 
-
-
-
-
-
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true
+    setTimeout(cb, 100) // fake async
+  }}
 
 const Navigation = () => {
-  return (
-    <div>
-      <div className="navigation">
-        
-      <div>
-        <Link to="/">Home</Link>
-        </div>
-        <div>
-<<<<<<< HEAD
-        <Link to="/SignUp"></Link>
-        </div>
-        <div>
-        <Link to="/LogIn">Login</Link>
-        </div>
-        <div>
-=======
->>>>>>> 5b6c72214114db58e53aec9c2cccd43947eefef4
-        <Link to="/Dasboard">DashBoard</Link>
-        </div>
-        <div>
-        <Link to="/Donate">Donate</Link>
-        </div>
-      </div>
+return (
+  <div>
+     
+    <div className="navbar">
+
+        <NavLink to ="/">Home</NavLink>
+    <NavLink to="/signup">Sign Up</NavLink>
+      
+      <NavLink to="/LogIn">Login</NavLink>
+     
+      <NavLink to="/CampaignLogin">CampaignLogin</NavLink>
+      
+      
+     
+      <Link to="/dashboard">Dashboard</Link>
+     
+      
+      <NavLink  to="/Donate">Donate</NavLink>
+      
+     
+      <NavLink  to="/Chat">Send Us A Question</NavLink>
+     
     </div>
-  );
+  </div>
+);
 };
 
 export default Navigation;

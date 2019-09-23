@@ -28,7 +28,7 @@ border-radius: 10px;
 `
 
 
-function LoginForm({ errors, touched, status }) {
+function CampaignLoginForm({ errors, touched, status }) {
     const [user, setUser] = useState([])
     useEffect(() => {
         if (status) {
@@ -39,10 +39,10 @@ function LoginForm({ errors, touched, status }) {
 <div>
         <Navigation/>
 
-        <div className="loginForm">
+        <div className="campaignloginForm">
             {/* All Data can be changed  */}
             <Form>
-                <h1>Login</h1>
+                <h1>Login to Your Campaign</h1>
                 <div>
                     {touched.username && errors.username && <p className="error"> {errors.username}</p>}
                     <StyledField type="text" name="username" placeholder="Username" />
@@ -56,7 +56,7 @@ function LoginForm({ errors, touched, status }) {
 
                 <StyledButton type="submit">Submit</StyledButton>
 
-                {/* <Route path='/dashboard' component={Dashboard}>Submit</Route>
+                {/* <Route path='/dashboard' component={CampaignDashboard}>Submit</Route>
                 {user.map((users) => (
                     <div key={users.id}>
                         <div>Name: {users.username}</div>
@@ -69,7 +69,7 @@ function LoginForm({ errors, touched, status }) {
     );
 }
 
-const FormikUserForm = withFormik({
+const CampaignFormikForm = withFormik({
 
     mapPropsToValues({ username, password }) {
         return {
@@ -89,8 +89,8 @@ const FormikUserForm = withFormik({
         //     .required("Choose a campaign")
     }),
     handleSubmit: (values, { props, setStatus }) => {
-        props.history.push('/dashboard');
-        Axios.post('https://reqres.in/api/users', values)
+        props.history.push('/CampaignDashboard');
+        Axios.post('https://reqres.in/api/CampaignForm', values)
             .then((res) => {
                 setStatus(res.data)
                 console.log(res.data, "button was clicked");
@@ -101,6 +101,6 @@ const FormikUserForm = withFormik({
 
 
     }
-})(LoginForm);
+})(CampaignLoginForm);
 
-export default FormikUserForm;
+export default CampaignFormikForm;
