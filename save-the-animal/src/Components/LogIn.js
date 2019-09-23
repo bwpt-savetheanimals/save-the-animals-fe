@@ -76,13 +76,8 @@ const FormikUserForm = withFormik({
     validationSchema: Yup.object().shape({
         username: Yup.string()
             .required("Username is required to login"),
-        // email: Yup.string()
-        //     .email("Not a valid email")
-        //     .required("Email is required"),
         password: Yup.string()
             .required("Password is required to login")
-        // campaign: Yup.mixed()
-        //     .required("Choose a campaign")
     }),
     handleSubmit: (values, { props, setStatus }) => {
         props.history.push('/dashboard');
