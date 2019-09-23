@@ -1,6 +1,6 @@
 import React from 'react';
 import DonateForm from './Components/DonateForm'
-import Navigation from './Components/Navigation'
+import Chat from './Components/Chat'
 import SignUp from './SignUp'
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -11,13 +11,14 @@ import Dashboard from './Components/Dashboard';
 import CampaignForm from './Components/Campaign/CampaignForm';
 import CampaignDashboard from './Components/CampaignDashboard';
 import Data from './Components/Campaign/CampaignData';
-
-
+import PrivateRouteCD from './Components/PrivateRouteCD';
+import CampaignLogin from './Components/CampaignLogin';
 
 function App() {
   return (
 
     <div className="App">
+
 
       <Navigation />
      
@@ -26,13 +27,17 @@ function App() {
       <Route path="/login" component={FormikUserForm} />
       <Route path="/dashboard" component={Dashboard}></Route> 
       <Route path="/Cdashboard" component={CampaignDashboard}> <Data/> </Route>
-     <Route path="/donate" component={DonateForm}/>
+      <Route path="/CampaignLogin" component={CampaignLogin}/>
+      <PrivateRouteCD path="/Cdashboard" component={CampaignDashboard}><Data/> </Route> 
+      <Route path="/donate" component={DonateForm}/>
+     <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={CampaignForm}/>
     
 
      
      
      
+
     </div>
   );
 }
