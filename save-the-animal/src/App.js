@@ -21,29 +21,17 @@ function App() {
 
     <div className="App">
 
-
-      
-     
-      <Route exact path="/" component={WelcomePage} />
+       <Route exact path="/" component={WelcomePage} />
       <Route path="/signup" component={SignUpForm} />
       <Route path="/login" component={FormikUserForm} />
       <Route path="/dashboard" component={Dashboard}></Route> 
-      <Route path="/Cdashboard" component={CampaignDashboard}> <Data/> </Route>
       <Route path="/CampaignLogin" component={CampaignLogin}/>
-
       <PrivateRouteCD path="/Cdashboard" component={CampaignDashboard}><Data/> </PrivateRouteCD> 
-
       <Route path="/donate" component={DonateForm}/>
      <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={CampaignForm}/>
-     <Data />
-    
-
-     
-     
-     
-
-    </div>
+  
+     </div>
   );
 }
 
