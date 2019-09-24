@@ -1,4 +1,4 @@
 [build]
-base = "save-the-animal/"
-publish = "save-the-animal/build/"
+base = "save-the-animal"
+publish = "save-the-animal/build"
 command = "npm run build"
