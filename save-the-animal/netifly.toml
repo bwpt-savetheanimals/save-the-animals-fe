@@ -1,0 +1,4 @@
+[build]
+base = "save-the-animals-fe/"
+publish = "save-the-animals-fe/build/"
+command = "npm build"
