@@ -13,7 +13,7 @@ const fakeAuth = {
         fakeAuth.isAuthenticated === true
         ? <CampaignDashBoard {...props} />
               :
-              <Redirect to="/login" />
+              <Redirect to="/Cdashboard" />
               )} />
               )
     

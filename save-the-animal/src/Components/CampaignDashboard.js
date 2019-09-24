@@ -9,6 +9,7 @@ import Navigation from './Navigation'
 
 
 
+
 function CampaignDashboard() {
 
     return (
@@ -17,10 +18,10 @@ function CampaignDashboard() {
         <div className="App">
          
 
-
-            <Route path='/Cdashboard' component={FormikCampaign}></Route>
-        
-
+      <h1>Campaign!</h1>     
+           <Route path='/Cdashboard' component={Data}></Route>
+           <FormikCampaign />
+           <Data />
            
            </div>  
         </div>

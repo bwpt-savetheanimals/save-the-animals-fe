@@ -14,18 +14,12 @@ margin: 15px auto;
 `
 
 const StyledButton = styled.button`
-width: 77px;
+width: 100px;
 background-color: #C2E1C2;
 border-color: #F7F7F2;
 border-radius: 10px;
 `
 
-const StyleButton = styled(NavLink)`
-width: 77px;
-background-color: #C2E1C2;
-border-color: #F7F7F2;
-border-radius: 10px;
-`
 
 
 function LoginForm({ errors, touched, status }) {

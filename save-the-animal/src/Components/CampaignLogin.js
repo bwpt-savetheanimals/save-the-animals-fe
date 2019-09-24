@@ -20,12 +20,6 @@ border-color: #F7F7F2;
 border-radius: 10px;
 `
 
-const StyleButton = styled(NavLink)`
-width: 77px;
-background-color: #C2E1C2;
-border-color: #F7F7F2;
-border-radius: 10px;
-`
 
 
 function CampaignLoginForm({ errors, touched, status }) {
@@ -89,7 +83,7 @@ const CampaignFormikForm = withFormik({
         //     .required("Choose a campaign")
     }),
     handleSubmit: (values, { props, setStatus }) => {
-        props.history.push('/CampaignDashboard');
+        props.history.push('/Cdashboard');
         Axios.post('https://reqres.in/api/CampaignForm', values)
             .then((res) => {
                 setStatus(res.data)

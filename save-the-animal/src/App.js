@@ -13,6 +13,7 @@ import CampaignDashboard from './Components/CampaignDashboard';
 import Data from './Components/Campaign/CampaignData';
 import PrivateRouteCD from './Components/PrivateRouteCD';
 import CampaignLogin from './Components/CampaignLogin';
+import Navigation from './Components/Navigation';
 
 
 function App() {
@@ -29,10 +30,13 @@ function App() {
       <Route path="/dashboard" component={Dashboard}></Route> 
       <Route path="/Cdashboard" component={CampaignDashboard}> <Data/> </Route>
       <Route path="/CampaignLogin" component={CampaignLogin}/>
+
       <PrivateRouteCD path="/Cdashboard" component={CampaignDashboard}><Data/> </PrivateRouteCD> 
+
       <Route path="/donate" component={DonateForm}/>
      <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={CampaignForm}/>
+     <Data />
     
 
      

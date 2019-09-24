@@ -9,7 +9,7 @@ import Navigation from './Components/Navigation';
 const StyledField = styled(Field)`
 padding: 10px;
 margin: 15px auto;
-`;
+
 
 const StyledButton = styled.button`
 	width: 95px;
