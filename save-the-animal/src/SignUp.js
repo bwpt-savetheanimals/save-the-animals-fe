@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { withFormik, Form, Field, Formik } from 'formik';
+import { withFormik, Form, Field, Formik, yupToFormErrors } from 'formik';
 import styled from 'styled-components';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import Navigation from './Components/Navigation';
 
 const StyledField = styled(Field)`
 padding: 10px;
-margin: 15px auto;
+margin: 15px auto;`
 
 
 const StyledButton = styled.button`
@@ -20,7 +20,7 @@ const StyledButton = styled.button`
 	margin: 5px;
 `;
 
-function SignUp({ status, touched, errors }) {
+function SignUp({ status, values, touched, errors }) {
 	console.log(status);
 	const [ people, setPeople ] = useState([]);
 
@@ -31,36 +31,32 @@ function SignUp({ status, touched, errors }) {
 		[ people ]
 	);
 	return (
+    <div>
+    <Navigation/>
 		<div className="signupForm">
 			<Form>
 				<h1>Sign Up</h1>
 				<div>
 					{touched.username && errors.username && <p className="error"> {errors.username}</p>}
-					<StyledField type="text" name="username" placeholder="*Username" />
+					<StyledField type="text" name="username" placeholder="*Username" values={values.username}/>
 				</div>
 				<div>
 					{touched.email && errors.email && <p className="error"> {errors.email}</p>}
-					<StyledField type="email" name="email" placeholder="*Email" />
+					<StyledField type="email" name="email" placeholder="*Email" values={values.email}/>
 				</div>
 				<div>
 					{touched.password && errors.password && <p className="error"> {errors.password}</p>}
-					<StyledField type="password" name="person" placeholder="*Password" />
+					<StyledField type="password" name="person" placeholder="*Password" values={values.password} />
 				</div>
-				<div class="form-group form-check">
-					<label class="form-check-label" for="exampleCheck1">
-						<StyledField
-							class="form-check-input"
-							id="exampleCheck1"
-							type="checkbox"
-							name="Terms of Service"
-							placeholder="Terms of Service"
-						/>
-						<span>Term of Service</span>
+		
+					<label>
+						<Field type="checkbox" name="Terms of Service"/>
+              Terms of Service
 					</label>
-				</div>
-				<StyledButton type="submit">Submit</StyledButton>
+							<StyledButton type="submit">Submit</StyledButton>
 			</Form>
 		</div>
+    </div>
 	);
 }
 
@@ -70,13 +66,13 @@ const SignUpForm = withFormik({
 			name: username || '',
 			email: email || '',
 			password: password || '',
-			termsOfService: termsOfService || false
+			termsOfService: 'Term of Service' || false
 		};
 	},
 	validationSchema: yup.object().shape({
 		name: yup.string().required('Please enter Username'),
 		email: yup.string().email('Please enter valid email'),
-		password: yup.string().min('8 characters minimum').matches(/(?=.*[0-9])/),
+		password: yup.string().min(8).matches(/(?=.*[0-9])/),
 		termsOfService: yup.bool().required()
 	}),
 
