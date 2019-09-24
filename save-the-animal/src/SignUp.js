@@ -1,82 +1,97 @@
-import React, {useState, useEffect} from 'react';
-import {withFormik, Form, Field} from 'formik';
-import styled from 'styled-components'
-import * as yup from 'yup'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import { withFormik, Form, Field, Formik } from 'formik';
+import styled from 'styled-components';
+import * as yup from 'yup';
+import axios from 'axios';
 import './App.css';
-import Navigation from './Components/Navigation'
-
+import Navigation from './Components/Navigation';
 
 const StyledField = styled(Field)`
 padding: 10px;
 margin: 15px auto;
-`
 
-function SignUp({status, touched, errors}) {
-  console.log(status)
-  const [people, setPeople] = useState([])
 
-  useEffect(() => {
-    if(status)
-    setPeople(...people,status)
-  },[people])
-  return (
-    <div><Navigation/>
-   <Form>
-     <h1>Sign Up</h1>
-     {touched.username && errors.username && <p className="error"> {errors.username}</p>}
-     <StyledField type="text" name='username' placeholder="*Username" />
+const StyledButton = styled.button`
+	width: 95px;
+	background-color: #c2e1c2;
+	border-color: #f7f7f2;
+	border-radius: 10px;
+	text-align: center;
+	margin: 5px;
+`;
 
-     {touched.email && errors.email && <p className="error"> {errors.email}</p>}
-     <StyledField type="email" name='email' placeholder="*Email" />
+function SignUp({ status, touched, errors }) {
+	console.log(status);
+	const [ people, setPeople ] = useState([]);
 
-     {touched.password && errors.password && <p className="error"> {errors.password}</p>}
-     <StyledField type="password" name='person' placeholder="*Password" />
-
-     <label>
-       
-     <StyledField type="checkbox" name='Terms of Service' placeholder="Terms of Service" />
-     <span>Term of Service</span>
-     </label>
-     <button type='button' disabled>Submit</button>
-
-    
-
-   </Form>
-   </div>
-  );
+	useEffect(
+		() => {
+			if (status) setPeople(...people, status);
+		},
+		[ people ]
+	);
+	return (
+		<div className="signupForm">
+			<Form>
+				<h1>Sign Up</h1>
+				<div>
+					{touched.username && errors.username && <p className="error"> {errors.username}</p>}
+					<StyledField type="text" name="username" placeholder="*Username" />
+				</div>
+				<div>
+					{touched.email && errors.email && <p className="error"> {errors.email}</p>}
+					<StyledField type="email" name="email" placeholder="*Email" />
+				</div>
+				<div>
+					{touched.password && errors.password && <p className="error"> {errors.password}</p>}
+					<StyledField type="password" name="person" placeholder="*Password" />
+				</div>
+				<div class="form-group form-check">
+					<label class="form-check-label" for="exampleCheck1">
+						<StyledField
+							class="form-check-input"
+							id="exampleCheck1"
+							type="checkbox"
+							name="Terms of Service"
+							placeholder="Terms of Service"
+						/>
+						<span>Term of Service</span>
+					</label>
+				</div>
+				<StyledButton type="submit">Submit</StyledButton>
+			</Form>
+		</div>
+	);
 }
 
-export default withFormik({
-  mapPropsToValues: ({username, email, password, termsOfService }) => {
-    return {
-      name: username || '',
-      email: email || '',
-      password: password || '',
-      termsOfService: termsOfService || false
-    
-    }
-  },
-  validationSchema: yup.object().shape({
-    name: yup.string().required("Please enter Username"),
-    email:yup.string()
-    .email()
-    .required("Please enter valid email"),
-    password:yup.string()
-    .required("Please enter password")
-    .min('Password is too short-should be 8 characters minimum')
-    .matches(/(?=.*[0-9])/),
-    termsOfService: yup.bool().required()
-  }),
-      handleSubmit: (values, {setStatus}) => {
-        axios.post('https://reqres.in/api/users',values)
-        .then((res) => {
-            setStatus(res.data)
-            // console.log(res)
-        })
-        .catch(err => {
-            console.log('Error', err.response)
-        })
-    }
-  
+const SignUpForm = withFormik({
+	mapPropsToValues: ({ username, email, password, termsOfService }) => {
+		return {
+			name: username || '',
+			email: email || '',
+			password: password || '',
+			termsOfService: termsOfService || false
+		};
+	},
+	validationSchema: yup.object().shape({
+		name: yup.string().required('Please enter Username'),
+		email: yup.string().email('Please enter valid email'),
+		password: yup.string().min('8 characters minimum').matches(/(?=.*[0-9])/),
+		termsOfService: yup.bool().required()
+	}),
+
+	handleSubmit: (values, { props, setStatus }) => {
+		props.history.push('/dashboard');
+		axios
+			.post('https://reqres.in/api/users', values)
+			.then((res) => {
+				setStatus(res.data);
+				// console.log(res)
+			})
+			.catch((err) => {
+				console.log('Error', err.response);
+			});
+	}
 })(SignUp);
+
+export default SignUpForm;
