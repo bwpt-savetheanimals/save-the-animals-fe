@@ -64,7 +64,7 @@ function SignUp({ status, values, touched, errors }) {
 		
 					<label>
 						<Field type="checkbox" name="Terms of Service"/>
-              Terms of Service
+              I agree to Terms and Conditions
 					</label>
 							<StyledButton type="submit">Submit</StyledButton>
 			</Form>

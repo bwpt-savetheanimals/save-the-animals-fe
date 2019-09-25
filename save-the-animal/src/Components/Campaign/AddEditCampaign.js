@@ -48,6 +48,12 @@ export default function AddEditMember(props) {
 		props.history.push('/Cdashboard');
 	};
 
+	const deleteMember = (id) => {
+		setMembersList(membersList.filter(member => member.id !==id))
+		console.log('member',props)
+		props.history.push('/Cdashboard');
+	}
+
 	return (
 		<Div>
 			<Style>
