@@ -24,6 +24,14 @@ export default function Data(props) {
 		});
 		setMembersList(newMembersList);
 	};
+
+
+	const deleteMember = () => {
+		setMembersList(membersList.filter(member => props.member.id !== props.id))
+		console.log('delete', props)
+	}
+
+
 	return (
 		<div>
 			<Route
@@ -34,15 +42,19 @@ export default function Data(props) {
 						{...props}
 						setMemberToEdit={setMemberToEdit}
 						membersList={membersList}
-					setMembersList={setMembersList}
+
+						setMembersList={setMembersList}
+						delete={deleteMember}
+
 					/>
 				)}
 			/>
 			<Route
 				path="/add"
 				render={(props) => (
-					<AddEditMember {...props} membersList={membersList} setMembersList={setMembersList} />
+					<AddEditMember {...props} membersList={membersList} setMembersList={setMembersList} delete={deleteMember}/>
 				)}
+			
 			/>
 			<Route
 				path="/edit/:id"
@@ -56,7 +68,9 @@ export default function Data(props) {
 					/>
 				)}
 			/>
+
 	<Redirect to="/" />
 		</div>
 	);
+
 }

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import UserLogin from './User';
 import Navigation from './Navigation'
 
+
 const StyledDiv = styled.div`
  display: flex;
  flex-direction: column;
@@ -18,8 +19,8 @@ const StyledDiv = styled.div`
   text-align: left;
   background-color: #80AB82;
   border: 2px solid #773f1a;
-  border-radius: 8px;
-`
+  border-radius: 8px;`
+
 
 const StyledButton = styled.button`
     color: #46792f;
@@ -58,6 +59,4 @@ function Dashboard() {
         </div>
     );
 }
-
-
 export default Dashboard;

@@ -1,3 +1,4 @@
+  
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { withFormik, Form, Field } from "formik";
@@ -56,10 +57,10 @@ const FormikCampaign = withFormik({
   }),
   handleSubmit: (values, { props, setStatus }) => {
     props.history.push('/campaign');
-    Axios.post('https://reqres.in/api/users', values)
+    Axios.get('https://savetheanimals-be.herokuapp.com/api/cams/:id', values)
       .then((res) => {
-        setStatus(res.data)
-        console.log(res.data, "button was clicked");
+        setStatus(res)
+        console.log(res, "button was clicked");
       })
       .catch((error) => {
         console.log(error)
