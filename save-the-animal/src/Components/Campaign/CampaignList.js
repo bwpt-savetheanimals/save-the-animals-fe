@@ -3,11 +3,12 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 import Member from "./Campaign";
 
+
 const Style = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  > div {
+   div {
     display: flex;
     flex-direction: column;
     width: 350px;

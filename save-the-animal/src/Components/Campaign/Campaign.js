@@ -14,15 +14,16 @@ const Member = styled.div`
     margin: 0.5rem;
   }
 `
-
-
 export default function(props) {
   return (
+  
     <Member>
       <h2>{props.details.campaign}</h2>
       <h5>deadline: {props.details.deadline}</h5>
       
       {props.children}
     </Member>
+
+    	
   )
 }

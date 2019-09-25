@@ -7,23 +7,17 @@ import FormikCampaign from './Campaign/CampaignForm';
 import Data from './Campaign/CampaignData';
 import Navigation from './Navigation'
 
-
-
-
 function CampaignDashboard() {
 
     return (
         <div> <Navigation/>
 
-        <div className="App">
-         
-
-      <h1>Campaign!</h1>     
+        <div className="App"> 
+ <h1>Campaign!</h1>     
            <Route path='/Cdashboard' component={Data}></Route>
-           <FormikCampaign />
+           {/* <FormikCampaign /> */}
            <Data />
-           
-           </div>  
+         </div>  
         </div>
     );
 }
