@@ -14,8 +14,7 @@ import Data from './Components/Campaign/CampaignData';
 import PrivateRouteCD from './Components/PrivateRouteCD';
 import CampaignLogin from './Components/CampaignLogin';
 import Navigation from './Components/Navigation';
-import CampaignList from './Components/Campaign/C1';
-import { NavLink } from 'react-router-dom'
+
 
 
 function App() {
@@ -32,7 +31,8 @@ function App() {
       <Route path="/donate" component={DonateForm}/>
      <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={CampaignForm}/>
-  <NavLink to="/campaign" > Click me </NavLink>
+\
+ 
      </div>
   );
 }
