@@ -2,6 +2,10 @@ import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Navigation from './Navigation'
+import Axios from "axios";
+
+
+
 
 function DonationForm(errors,touched) {
   return (
@@ -21,7 +25,9 @@ function DonationForm(errors,touched) {
       <Field type="text" name="CVC/CVV" placeholder="CVC/CVV Number" />
       {touched.cvc && errors.cvc  && <p>{errors.cvc}</p>}
 
-      <button class="button-credit-card" onClick="submitCreditCardClick(event)">Donate!</button>
+      <button onClick={() => alert('Thank You For Your Donation')}>
+      Donate!
+    </button>
 
     </Form></div>
   );
@@ -65,11 +71,11 @@ validationSchema: Yup.object().shape({
   }),
 
 
-handleSubmit(values) {
-    console.log(values)
-    //THIS IS WHERE YOU DO YOUR FORM SUBMISSION CODE... HTTP REQUESTS, ETC.
-  }
+  
+
+  
   
     })(DonationForm);
 
+    
 export default FormikDonationForm;

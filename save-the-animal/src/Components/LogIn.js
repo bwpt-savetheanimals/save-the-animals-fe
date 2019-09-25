@@ -14,11 +14,30 @@ margin: 15px auto;
 `;
 
 const StyledButton = styled.button`
-	width: 100px;
-	background-color: #c2e1c2;
-	border-color: #f7f7f2;
-	border-radius: 10px;
-`;
+
+ color: #46792f;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 1.8%;
+    border: 2px solid #773f1a;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    margin: 5px;
+    font-size: 1.4rem;
+    border-radius: 2px;
+        &:hover {
+        color: #ffffff;
+        background: #007ba7;
+        border-color: #007ba7;
+        cursor: pointer;
+        transition: all 0.4s ease 0s;
+        }
+`
+
+
+
 
 function LoginForm({ errors, touched, status }) {
 	const [ user, setUser ] = useState([]);
@@ -64,6 +83,7 @@ function LoginForm({ errors, touched, status }) {
 }
 
 const FormikUserForm = withFormik({
+
 	mapPropsToValues({ username, password }) {
 		return {
 			username: username || '',
@@ -96,14 +116,17 @@ const FormikUserForm = withFormik({
               headers: {
                   Authorization: token
               }
+
             })
             .then(res => {
                 console.log('then', res)
             })
+
             .catch(err => {
                 console.log(err.response)
             })
         }
+
     }
                 
 })(LoginForm);
