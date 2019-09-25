@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import MembersList from './CampaignList';
 import AddEditMember from './AddEditCampaign';
+import Member from "./Campaign";
+import Axios from "axios";
 
-const initialTeam = [ { campaign: 'Campaign 1', id: 0, deadline: '2019-10-24' } ];
+const initialTeam = [{campaign: "Monkeys", deadline: "02/02/2002"}];
 
 export default function Data(props) {
 	const [ membersList, setMembersList ] = useState(initialTeam);
 	const [ memberToEdit, setMemberToEdit ] = useState();
-
+	
 	const editMember = (editedMember) => {
 		console.log(editedMember);
 		const newMembersList = [];
 		membersList.forEach((member) => {
-			console.log(member);
+			console.log(member); 
 			if (editedMember.id === member.id) {
 				return (newMembersList[member.id] = editedMember);
 			} else {
@@ -22,7 +24,6 @@ export default function Data(props) {
 		});
 		setMembersList(newMembersList);
 	};
-
 	return (
 		<div>
 			<Route
@@ -33,7 +34,7 @@ export default function Data(props) {
 						{...props}
 						setMemberToEdit={setMemberToEdit}
 						membersList={membersList}
-						setMembersList={setMembersList}
+					setMembersList={setMembersList}
 					/>
 				)}
 			/>
@@ -55,7 +56,7 @@ export default function Data(props) {
 					/>
 				)}
 			/>
-			<Redirect to="/" />
+	<Redirect to="/" />
 		</div>
 	);
 }
