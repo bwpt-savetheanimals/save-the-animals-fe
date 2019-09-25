@@ -6,43 +6,25 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import UserLogin from './User';
 import Navigation from './Navigation'
 
+const StyledLink = styled(Link)`
+background-color: #C2E1C2;
+border-color: #F7F7F2;
+border-radius: 10px;
+`
 
 
 function Dashboard() {
-    // const [ username, setUser ] = useState([])
-
-
-    // useEffect(() => {
-      
-    //     Axios
-    //         .get('https://swapi.co/api/people/')
-    //         .then((res) => {
-    //             setUser(res.data.results);
-    //             console.log(res.data)
-    //         })
-    //         .catch((error) => {
-    //             console.log(error)
-    //         });
-    
-
-  
-    // }, []);
 
     return (
         <div>
         <Navigation/>
         <div className="App">
-         
-            {/* {username.map((user) => 
-                <UserLogin key={user.id} users={user.id}/> )} */}
-
-{/*                   
-      {username.map((name) =>
-        <UserLogin name={name.name} key={name.name} />)} */}
           
            <Route path='/dashboard' component={UserLogin}></Route>
-           <button>Donate Here</button>
-           <Link to='donate' type='submit'>Donate</Link>
+           {/* <button>Donate Here</button> */}
+           <StyledLink to='donate' ><button>Donate</button></StyledLink>
+         <h3>Take a look at your <Link to='/Cdashboard'>Campaigns</Link> here.</h3>
+
             
         </div>
         </div>

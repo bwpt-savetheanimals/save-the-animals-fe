@@ -17,7 +17,7 @@ return (
     <div className="navbar">
 
         <NavLink to ="/">Home</NavLink>
-    <NavLink to="/signup">Sign Up</NavLink>
+    <NavLink to="/Signup">Sign Up</NavLink>
       
       <NavLink to="/LogIn">Login</NavLink>
      
