@@ -63,8 +63,13 @@ function SignUp({ status, values, touched, errors }) {
 				</div>
 		
 					<label>
+<<<<<<< HEAD
+						<Field type="checkbox" name="TermsOfService"/>
+              Terms of Service
+=======
 						<Field type="checkbox" name="Terms of Service"/>
               I agree to Terms and Conditions
+>>>>>>> master
 					</label>
 							<StyledButton type="submit">Submit</StyledButton>
 			</Form>
@@ -104,3 +109,4 @@ const SignUpForm = withFormik({
 })(SignUp);
 
 export default SignUpForm;
+
