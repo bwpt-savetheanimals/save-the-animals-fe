@@ -33,16 +33,14 @@ const StyledButton = styled.button`
         }
 `
 
-function SignUp({ status, values, touched, errors }) {
-	console.log(status);
-	const [ people, setPeople ] = useState([]);
-
-	useEffect(
-		() => {
-			if (status) setPeople(...people, status);
-		},
-		[ people ]
-	);
+function SignUp({ status, touched, errors }) {
+	// console.log(status);
+	const [ people, setPeople ] = useState([])
+	useEffect( () => {
+			if (status) {
+				setPeople(...people, status);
+			}
+		},[ status ]);
 	return (
     <div>
     <Navigation/>
@@ -51,26 +49,21 @@ function SignUp({ status, values, touched, errors }) {
 				<h1>Sign Up</h1>
 				<div>
 					{touched.username && errors.username && <p className="error"> {errors.username}</p>}
-					<StyledField type="text" name="username" placeholder="*Username" values={values.username}/>
+					<StyledField type="text" name="username" placeholder="*Username" />
 				</div>
 				<div>
 					{touched.email && errors.email && <p className="error"> {errors.email}</p>}
-					<StyledField type="email" name="email" placeholder="*Email" values={values.email}/>
+					<StyledField type="email" name="email" placeholder="*Email" />
 				</div>
 				<div>
 					{touched.password && errors.password && <p className="error"> {errors.password}</p>}
-					<StyledField type="password" name="person" placeholder="*Password" values={values.password} />
+					<StyledField type="password" name="password" placeholder="*Password"  />
+					{/* changed name from "person" to "password" */}
 				</div>
-		
-					<label>
-<<<<<<< HEAD
-						<Field type="checkbox" name="TermsOfService"/>
-              Terms of Service
-=======
-						<Field type="checkbox" name="Terms of Service"/>
-              I agree to Terms and Conditions
->>>>>>> master
-					</label>
+					<div>
+						<Field type="checkbox" name="termsOfService"/>
+              				<p>I agree to Terms and Conditions</p>
+						</div>
 							<StyledButton type="submit">Submit</StyledButton>
 			</Form>
 		</div>
@@ -81,26 +74,28 @@ function SignUp({ status, values, touched, errors }) {
 const SignUpForm = withFormik({
 	mapPropsToValues: ({ username, email, password, termsOfService }) => {
 		return {
-			name: username || '',
+			username: username || '',
 			email: email || '',
 			password: password || '',
 			termsOfService: 'Term of Service' || false
 		};
 	},
 	validationSchema: yup.object().shape({
-		name: yup.string().required('Please enter Username'),
-		email: yup.string().email('Please enter valid email'),
-		password: yup.string().min(8).matches(/(?=.*[0-9])/),
-		termsOfService: yup.bool().required()
+		username: yup.string().required('Please enter Username'),
+		email: yup.string().required('Please enter valid email'),
+		password: yup.string()
+		.required('Please enter a password')
+		.min(8, "Should be 8 characters or more"),
+		termsOfService: yup.bool().required("Please accept our terms")
 	}),
 
 	handleSubmit: (values, { props, setStatus }) => {
 		props.history.push('/dashboard');
 		axios
-			.post('https://savetheanimals-be.herokuapp.com/api/users/register', values)
+			.post('https://savetheanimals-be.herokuapp.com/api/users/register')
 			.then((res) => {
-				setStatus(res.data);
-				// console.log(res)
+				setStatus(res);
+				console.log(res, "button was clicked")
 			})
 			.catch((err) => {
 				console.log('Error', err.response);
