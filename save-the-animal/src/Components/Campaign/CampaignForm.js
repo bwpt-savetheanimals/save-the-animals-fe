@@ -57,7 +57,7 @@ const FormikCampaign = withFormik({
   }),
   handleSubmit: (values, { props, setStatus }) => {
     props.history.push('/campaign');
-    Axios.get('https://savetheanimals-be.herokuapp.com/api/cams/:id', values)
+    Axios.get('', values)
       .then((res) => {
         setStatus(res)
         console.log(res, "button was clicked");

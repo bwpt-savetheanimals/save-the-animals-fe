@@ -9,7 +9,7 @@ import WelcomePage from './Components/Welcome';
 import FormikUserForm from './Components/LogIn';
 import Dashboard from './Components/Dashboard';
 import FormikCampaign from './Components/Campaign/CampaignForm';
-import CampaignDashboard from './Components/CampaignDashboard';
+import CampaignDashboard from './Components/Campaign/CampaignDashboard';
 import Data from './Components/Campaign/CampaignData';
 import PrivateRouteCD from './Components/PrivateRouteCD';
 import CampaignLogin from './Components/CampaignLogin';
