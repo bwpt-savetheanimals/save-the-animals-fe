@@ -59,4 +59,5 @@ export default function Data(props) {
 	<Redirect to="/" />
 		</div>
 	);
+
 }
