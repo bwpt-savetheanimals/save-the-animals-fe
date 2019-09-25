@@ -8,12 +8,13 @@ import './App.css';
 import WelcomePage from './Components/Welcome';
 import FormikUserForm from './Components/LogIn';
 import Dashboard from './Components/Dashboard';
-import CampaignForm from './Components/Campaign/CampaignForm';
-import CampaignDashboard from './Components/CampaignDashboard';
+import FormikCampaign from './Components/Campaign/CampaignForm';
+import CampaignDashboard from './Components/Campaign/CampaignDashboard';
 import Data from './Components/Campaign/CampaignData';
 import PrivateRouteCD from './Components/PrivateRouteCD';
 import CampaignLogin from './Components/CampaignLogin';
 import Navigation from './Components/Navigation';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -30,8 +31,8 @@ function App() {
       <PrivateRouteCD path="/Cdashboard" component={CampaignDashboard}><Data/> </PrivateRouteCD> 
       <Route path="/donate" component={DonateForm}/>
      <Route path="/chat"component={Chat}/>
-     <Route path="/campaign" component={CampaignForm}/>
-\
+     <Route path="/campaign" component={FormikCampaign}/>
+  <NavLink to="/campaign">Click me</NavLink>
  
      </div>
   );

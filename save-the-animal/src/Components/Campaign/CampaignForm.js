@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import { Link, Route, NavLink } from 'react-router-dom'
 import UserLogin from "../User";
 import Data from "./CampaignData"
+import Campaigns from "./Campaign"
 
 function CampaignForm({ errors, touched, status }) {
   const [cForm, setCForm] = useState([])
@@ -16,6 +17,7 @@ function CampaignForm({ errors, touched, status }) {
       setCForm([...cForm, status])
     }
   }, [status])
+
   return (
     <div>
       <Form>
@@ -24,6 +26,7 @@ function CampaignForm({ errors, touched, status }) {
           <Field type="text" name="campaign" placehold="campaign" /> <br />
           <Field type="date" name="deadline" placehold="deadline" />
         </div>
+        <div> </div>
 
         <button type="submit">Submit</button>
         {cForm.map((users) => (
@@ -33,6 +36,7 @@ function CampaignForm({ errors, touched, status }) {
           </div>
         ))}
       </Form>
+   
     </div>
   );
 }
@@ -53,10 +57,10 @@ const FormikCampaign = withFormik({
   }),
   handleSubmit: (values, { props, setStatus }) => {
     props.history.push('/campaign');
-    Axios.post('https://reqres.in/api/users', values)
+    Axios.get('', values)
       .then((res) => {
-        setStatus(res.data)
-        console.log(res.data, "button was clicked");
+        setStatus(res)
+        console.log(res, "button was clicked");
       })
       .catch((error) => {
         console.log(error)
