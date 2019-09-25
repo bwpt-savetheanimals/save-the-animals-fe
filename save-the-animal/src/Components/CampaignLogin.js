@@ -14,10 +14,25 @@ margin: 15px auto;
 `
 
 const StyledButton = styled.button`
-width: 77px;
-background-color: #C2E1C2;
-border-color: #F7F7F2;
-border-radius: 10px;
+ color: #46792f;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 1.8%;
+    border: 2px solid #773f1a;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    margin: 5px;
+    font-size: 1.4rem;
+    border-radius: 2px;
+        &:hover {
+        color: #ffffff;
+        background: #007ba7;
+        border-color: #007ba7;
+        cursor: pointer;
+        transition: all 0.4s ease 0s;
+        }
 `
 
 
@@ -33,7 +48,7 @@ function CampaignLoginForm({ errors, touched, status }) {
 <div>
         <Navigation/>
 
-        <div className="campaignloginForm">
+        <div className="loginForm">
             {/* All Data can be changed  */}
             <Form>
                 <h1>Login to Your Campaign</h1>

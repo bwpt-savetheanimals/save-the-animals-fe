@@ -12,13 +12,26 @@ margin: 15px auto;`
 
 
 const StyledButton = styled.button`
-	width: 95px;
-	background-color: #c2e1c2;
-	border-color: #f7f7f2;
-	border-radius: 10px;
-	text-align: center;
-	margin: 5px;
-`;
+ color: #46792f;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 1.8%;
+    border: 2px solid #773f1a;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    margin: 5px;
+    font-size: 1.4rem;
+    border-radius: 2px;
+        &:hover {
+        color: #ffffff;
+        background: #007ba7;
+        border-color: #007ba7;
+        cursor: pointer;
+        transition: all 0.4s ease 0s;
+        }
+`
 
 function SignUp({ status, values, touched, errors }) {
 	console.log(status);
@@ -33,7 +46,7 @@ function SignUp({ status, values, touched, errors }) {
 	return (
     <div>
     <Navigation/>
-		<div className="signupForm">
+		<div className="loginForm">
 			<Form>
 				<h1>Sign Up</h1>
 				<div>
@@ -79,7 +92,7 @@ const SignUpForm = withFormik({
 	handleSubmit: (values, { props, setStatus }) => {
 		props.history.push('/dashboard');
 		axios
-			.post('https://reqres.in/api/users', values)
+			.post('https://savetheanimals-be.herokuapp.com/api/users/register', values)
 			.then((res) => {
 				setStatus(res.data);
 				// console.log(res)
