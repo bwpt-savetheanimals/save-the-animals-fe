@@ -92,7 +92,9 @@ export default () => {
         <input id="name" onChange={e => setNameInput(e.target.value.trim())} required placeholder="What is your name .." /><br />
         <input id="question" onChange={e => setRoom(e.target.value.trim())} placeholder="What Is Your question .." /><br />
         <input id="email" onChange={e => setRoom(e.target.value.trim())} placeholder="Your Email Address..." /><br />
-        <button type="submit">Submit</button>
+        <button onClick={() => alert('Question Submitted')}>
+      Submit
+    </button>
       </form>
     </div>
     </div>
