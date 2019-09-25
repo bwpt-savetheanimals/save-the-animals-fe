@@ -19,7 +19,7 @@ const StyledDiv = styled.div`
   text-align: left;
   background-color: #80AB82;
   border: 2px solid #773f1a;
-  border-radius: 8px;
+  border-radius: 8px;`
 
 
 const StyledButton = styled.button`
