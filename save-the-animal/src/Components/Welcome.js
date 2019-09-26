@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import styled from 'styled-components';
 import { Link, Route } from 'react-router-dom'
 import Navigation from './Navigation'
@@ -46,7 +45,7 @@ function WelcomePage() {
     return (
         <div>
              <Navigation/>
-              <h1>Save The Animals!!!</h1>
+              <h1>Save The Animals!</h1>
         <StyledDiv>
             <Link to="/signup"><StyledButton>Signup</StyledButton></Link>
             <Link to="login"><StyledButton>Login</StyledButton></Link>

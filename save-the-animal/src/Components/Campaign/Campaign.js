@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from "styled-components"
-import axios from "axios";
+import CampaignHolder from "./Campaign.axios";
+
 
 const Member = styled.div`
   border: 1px solid black;
@@ -16,28 +17,15 @@ const Member = styled.div`
   }
 `
 export default function(props) {
-  	 const [campaignName, setCampaignName] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://savetheanimals-be.herokuapp.com/api/cams")
-      .then(response => {
-        setCampaignName(response.data.campaigns[0].cam_name);
-        // response.data.cam_name.forEach(topic => setCampaignName(topic));
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
-  return (
-    <div>
 
+  return (
+<div>
     <Member>
-      <h2>{props.details.campaign}</h2>
-      <h5>deadline: {props.details.deadline}</h5>
-        <h2>{props.details.campaignName}</h2>
-   {props.children}
+        <h2>{props.details.campaign}</h2>
+        <h5>deadline: {props.details.deadline}</h5>
+        {props.children}
     </Member>
+      <CampaignHolder/>
 </div>
     	
   )
