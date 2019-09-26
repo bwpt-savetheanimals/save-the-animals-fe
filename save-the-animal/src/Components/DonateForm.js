@@ -25,7 +25,7 @@ function DonationForm(errors,touched) {
       <Field type="text" name="CVC/CVV" placeholder="CVC/CVV Number" />
       {touched.cvc && errors.cvc  && <p>{errors.cvc}</p>}
 
-      <button onClick={() => alert('Thank You For Your Donation')}>
+      <button type="submit" onClick={() => alert('Thank You For Your Donation')}>
       Donate!
     </button>
 

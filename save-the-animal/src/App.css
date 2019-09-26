@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {
@@ -20,7 +21,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #095221;
 }
 
 @keyframes App-logo-spin {
@@ -35,7 +36,7 @@
 
 .navbar {
   width: 100%;
-  background-color: #555;
+  background-color: #80AB82;
   overflow: auto;
   display:flex;
   justify-content: space-around;
@@ -55,12 +56,12 @@
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
-  background-color: #000;
+  background-color: rgb(131, 187, 150);
 }
 
 /* Current/active navbar link */
 .active {
-  background-color: rgb(57, 54, 190);
+  background-color: rgb(36, 206, 44);
 }
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
