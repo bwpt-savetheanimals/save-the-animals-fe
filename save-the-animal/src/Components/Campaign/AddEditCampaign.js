@@ -70,6 +70,5 @@ export default function AddEditMember(props) {
 			</Style>
 		</Div>
 	);
-
 }
 
