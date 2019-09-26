@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import Axios from "axios";
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import UserLogin from './User';
+
 import Navigation from './Navigation'
 
 
@@ -49,14 +47,13 @@ function Dashboard() {
     return (
         <div>
         <Navigation/>
-        <Route path='/dashboard' component={UserLogin}></Route>
         <StyledDiv>
            <Link to='donate'><StyledButton>Donate</StyledButton></Link>
-         <h3><Link to='/Cdashboard'><StyledButton>Campaigns</StyledButton></Link> </h3>
-
-            
-        </StyledDiv>
+         <Link to='/Cdashboard'><StyledButton>Campaigns</StyledButton></Link>
+         </StyledDiv>
         </div>
     );
 }
 export default Dashboard;
+
+
