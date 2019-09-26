@@ -41,6 +41,7 @@ const StyledButton = styled.button`
 
 function LoginForm({ errors, touched, status }) {
 	const [ user, setUser ] = useState([]);
+	
 	useEffect(
 		() => {
 			if (status) {
@@ -95,10 +96,11 @@ const FormikUserForm = withFormik({
 		password: Yup.string().required('Password is required to login')
 	}),
 	handleSubmit: (values, { props, setStatus }) => {
+		const token = localStorage.getItem('token')
 		props.history.push('/dashboard');
 		Axios.post('https://savetheanimals-be.herokuapp.com/api/users/login', {
-			username: 'TestUser1',
-			password: 'TestPass'
+			username: 'Gmoney',
+			password: 'fakeme2019'
 		})
 			.then((res) => {
 				setStatus(res);
@@ -107,11 +109,11 @@ const FormikUserForm = withFormik({
                 localStorage.setItem('token', token)
 			})
 			.catch((error) => {
-				console.log(error);
+				console.log(error);	
             });
             
             const getItems = () => {
-                const token = localStorage.getItem('token');
+                
                 Axios.get('https://savetheanimals-be.herokuapp.com/api/users/',  {
               headers: {
                   Authorization: token
