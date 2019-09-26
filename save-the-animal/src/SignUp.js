@@ -90,16 +90,38 @@ const SignUpForm = withFormik({
 	}),
 
 	handleSubmit: (values, { props, setStatus }) => {
-		props.history.push('/dashboard');
-		axios
-			.post('https://savetheanimals-be.herokuapp.com/api/users/register')
+		const token = localStorage.getItem('token')
+		axios.post('https://savetheanimals-be.herokuapp.com/api/users/register', {
+			username: 'Gmoney',
+			password: 'fakeme2019'
+		})
 			.then((res) => {
 				setStatus(res);
-				console.log(res, "button was clicked")
+                console.log('sign',res, 'button was clicked');
+                const token = res.data.token;
+                localStorage.setItem('token', token)
 			})
-			.catch((err) => {
-				console.log('Error', err.response);
-			});
+			.catch((error) => {
+				console.log(error);	
+            });
+            
+            const getItems = () => {
+                
+				axios.
+				get('https://savetheanimals-be.herokuapp.com/api/users/',  {
+              headers: {
+                  Authorization: token
+              }
+
+            })
+            .then(res => {
+                console.log('then', res)
+            })
+
+            .catch(err => {
+                console.log(err.response)
+            })
+        }
 	}
 })(SignUp);
 
