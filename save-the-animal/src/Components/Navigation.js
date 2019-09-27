@@ -3,12 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100) // fake async
-  }}
+
 
 const Navigation = () => {
 return (
