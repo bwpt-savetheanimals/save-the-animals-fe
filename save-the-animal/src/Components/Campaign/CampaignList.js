@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import Member from './Campaign';
 import axios from 'axios';
 
-
-
 const Style = styled.div`
 
   display: flex;

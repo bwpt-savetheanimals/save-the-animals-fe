@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
 import Navigation from './Navigation'
-
 
 const StyledDiv = styled.div`
  display: flex;
@@ -18,7 +16,6 @@ const StyledDiv = styled.div`
   background-color: #80AB82;
   border: 2px solid #773f1a;
   border-radius: 8px;`
-
 
 const StyledButton = styled.button`
     color: #46792f;
@@ -41,15 +38,13 @@ const StyledButton = styled.button`
         transition: all 0.4s ease 0s;
         }
 `
-
 function Dashboard() {
-
     return (
         <div>
         <Navigation/>
         <StyledDiv>
            <Link to='donate'><StyledButton>Donate</StyledButton></Link>
-         <Link to='/Cdashboard'><StyledButton>Campaigns</StyledButton></Link>
+           <Link to='/Cdashboard'><StyledButton>Campaigns</StyledButton></Link>
          </StyledDiv>
         </div>
     );

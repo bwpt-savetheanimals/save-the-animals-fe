@@ -18,7 +18,9 @@ import { NavLink } from 'react-router-dom';
 
 function App() {
   return (
+
      <div className="background" style={{backgroundColor: "black",  height:"800px"}}>
+
     <div className="App">
 
        <Route exact path="/" component={WelcomePage} />
@@ -31,12 +33,7 @@ function App() {
      <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={FormikCampaign}/>
 
- 
- </div>
-
-  {/* <NavLink to="/campaign">Click me</NavLink> */}
- 
-     </div>
+</div>
 
   );
 }
