@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { withFormik, Form, Field, Formik, yupToFormErrors } from 'formik';
+import { withFormik, Form, Field } from 'formik';
 import styled from 'styled-components';
 import * as yup from 'yup';
 import axios from 'axios';
 import './App.css';
 import Navigation from './Components/Navigation';
+import history from './history'
 
 const StyledField = styled(Field)`
 padding: 10px;
@@ -89,40 +90,50 @@ const SignUpForm = withFormik({
 		termsOfService: yup.bool().required("Please accept our terms")
 	}),
 
-	handleSubmit: (values, { props, setStatus }) => {
-		const token = localStorage.getItem('token')
+	handleSubmit: (values, {props, setStatus }) => {
+		console.log('sign', props)
+		props.history.push('/dashboard')
 		axios.post('https://savetheanimals-be.herokuapp.com/api/users/register', {
-			username: 'Gmoney',
-			password: 'fakeme2019'
+			username: '',
+			password: ''
 		})
 			.then((res) => {
-				setStatus(res);
+				setStatus(res.data);
                 console.log('sign',res, 'button was clicked');
                 const token = res.data.token;
-                localStorage.setItem('token', token)
+				localStorage.setItem('token', token)
+			
 			})
+			
 			.catch((error) => {
 				console.log(error);	
-            });
-            
-            const getItems = () => {
+				history.push('/dashboard')
+			});
+		
+           
+			
+        //     const getItems = () => {
+		// 		const [user, setUsers]= useState([])
                 
-				axios.
-				get('https://savetheanimals-be.herokuapp.com/api/users/',  {
-              headers: {
-                  Authorization: token
-              }
+		// 		axios.
+		// 		get('https://savetheanimals-be.herokuapp.com/api/users/',  {
+        //       headers: {
+        //           Authorization: localStorage.getItem('token')
+        //       }
 
-            })
-            .then(res => {
-                console.log('then', res)
-            })
+        //     })
+        //     .then(res => {
+		// 	   console.log(res.data.listAllUsers)
+		// 	   setUsers(res.data.listAllUsers)
+			   
+        //     })
 
-            .catch(err => {
-                console.log(err.response)
-            })
-        }
+        //     .catch(err => {
+        //         console.log(err.response)
+        //     })
+        // }
 	}
+
 })(SignUp);
 
 export default SignUpForm;
