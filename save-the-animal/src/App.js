@@ -19,12 +19,7 @@ import CampaignLogin from './Components/CampaignLogin';
 function App() {
   return (
 
-    <div className="background" style={{backgroundColor: "black",  height:"800px"}}>
-=
-
-    
-
-
+   <div className="background" style={{backgroundColor: "black",  height:"800px"}}>
     <div className="App">
   
        <Route exact path="/" component={WelcomePage} />
@@ -37,19 +32,8 @@ function App() {
      <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={FormikCampaign}/>
 
- 
+  </div>
  </div>
-
-  {/* <NavLink to="/campaign">Click me</NavLink> */}
-
- 
-
-  
-
-
-</div>
-</div>
-
   );
 }
 
