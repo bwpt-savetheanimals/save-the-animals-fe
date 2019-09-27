@@ -18,7 +18,7 @@ import { NavLink } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="background" style={{backgroundColor: "black"}}>
+     <div className="background" style={{backgroundColor: "black",  height:"800px"}}>
     <div className="App">
 
        <Route exact path="/" component={WelcomePage} />
