@@ -1,14 +1,9 @@
-  
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Axios from "axios";
-import styled from 'styled-components';
-import { Link, Route, NavLink } from 'react-router-dom'
-import UserLogin from "../User";
-import Data from "./CampaignData"
-import Campaigns from "./Campaign"
+import CampaignHolder from "./Campaign.axios";
+
 
 function CampaignForm({ errors, touched, status }) {
   const [cForm, setCForm] = useState([])
@@ -35,6 +30,7 @@ function CampaignForm({ errors, touched, status }) {
             <div>Deadline: {users.deadline}</div>
           </div>
         ))}
+        <CampaignHolder />
       </Form>
    
     </div>

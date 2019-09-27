@@ -4,7 +4,6 @@ import Chat from './Components/Chat'
 import SignUpForm from './SignUp'
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
 import WelcomePage from './Components/Welcome';
 import FormikUserForm from './Components/LogIn';
 import Dashboard from './Components/Dashboard';
@@ -13,16 +12,15 @@ import CampaignDashboard from './Components/Campaign/CampaignDashboard';
 import Data from './Components/Campaign/CampaignData';
 import PrivateRouteCD from './Components/PrivateRouteCD';
 import CampaignLogin from './Components/CampaignLogin';
-import Navigation from './Components/Navigation';
 import { NavLink } from 'react-router-dom';
 
 
 
 function App() {
   return (
-    <div className="background" style={{backgroundColor: "black"}}>
+    <div className="background" style={{backgroundColor: "black",  height:"800px"}}>
     <div className="App">
-
+  
        <Route exact path="/" component={WelcomePage} />
       <Route path="/signup" component={SignUpForm} />
       <Route path="/login" component={FormikUserForm} />
@@ -32,8 +30,11 @@ function App() {
       <Route path="/donate" component={DonateForm}/>
      <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={FormikCampaign}/>
+  
+ 
+  {/* <NavLink to="/campaign">Click me</NavLink> */}
   </div>
- </div>
+     </div>
   );
 }
 
