@@ -30,11 +30,23 @@ function App() {
       <Route path="/donate" component={DonateForm}/>
      <Route path="/chat"component={Chat}/>
      <Route path="/campaign" component={FormikCampaign}/>
+<<<<<<< HEAD
   
+=======
+
+ 
+ </div>
+
+  {/* <NavLink to="/campaign">Click me</NavLink> */}
+>>>>>>> 6335b35d97b34844ca3b00c39bde22ebd2479c91
  
   {/* <NavLink to="/campaign">Click me</NavLink> */}
   </div>
      </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6335b35d97b34844ca3b00c39bde22ebd2479c91
   );
 }
 
