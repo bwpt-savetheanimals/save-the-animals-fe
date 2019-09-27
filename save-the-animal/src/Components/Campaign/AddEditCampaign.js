@@ -48,11 +48,11 @@ export default function AddEditMember(props) {
 		props.history.push('/Cdashboard');
 	};
 
-	const deleteMember = (id) => {
-		setMembersList(membersList.filter(member => member.id !==id))
-		console.log('member',props)
+	const deleteMember = (props) => {
+		setMembersList(membersList.filter((member) => member.props !== props));
+		console.log('member', props);
 		props.history.push('/Cdashboard');
-	}
+	};
 
 	return (
 		<Div>
@@ -65,10 +65,10 @@ export default function AddEditMember(props) {
 				{props.memberToEdit ? (
 					<Link onClick={editNewMember}>Edit </Link>
 				) : (
-					<Link onClick={addNewMember}>Save</Link>
+					<Link onClick={addNewMember}>Save</Link> 
+					
 				)}
 			</Style>
 		</Div>
 	);
 }
-

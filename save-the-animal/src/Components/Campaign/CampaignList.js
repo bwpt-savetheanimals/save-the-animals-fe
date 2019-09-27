@@ -31,9 +31,9 @@ export default function MembersList(props) {
 					<Link to={`/edit/${member.id}`} onClick={() => setMemberToEdit(member)}>
 						Edit
 					</Link>
-					<Link to="/Cdashboard" onClick={() => props.deleteMember(setMemberToEdit)} key={props.id}>
-						Delete
-					</Link>
+					<button onClick={() => deleteMember(membersList)} key={props.id}>Delete</button>
+					
+					
 				</Member>
 			))}
 			<Link to="/add">Add</Link>

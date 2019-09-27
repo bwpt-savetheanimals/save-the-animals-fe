@@ -85,6 +85,7 @@ const FormikUserForm = withFormik({
 	mapPropsToValues({ username, password }) {
 		return {
 			username: username || '',
+
 			password: password || ''
 		};
 	},
@@ -109,22 +110,22 @@ const FormikUserForm = withFormik({
 				console.log(error);	
             });
             
-            const getItems = () => {
+        //     const getItems = () => {
                 
-                Axios.get('https://savetheanimals-be.herokuapp.com/api/users/',  {
-              headers: {
-                  Authorization: token
-              }
+        //         Axios.get('https://savetheanimals-be.herokuapp.com/api/users/',  {
+        //       headers: {
+        //           Authorization: token
+        //       }
 
-            })
-            .then(res => {
-                console.log('then', res)
-            })
+        //     })
+        //     .then(res => {
+        //         console.log('then', res)
+        //     })
 
-            .catch(err => {
-                console.log(err.response)
-            })
-        }
+        //     .catch(err => {
+        //         console.log(err.response)
+        //     })
+        // }
 
     }
                 
