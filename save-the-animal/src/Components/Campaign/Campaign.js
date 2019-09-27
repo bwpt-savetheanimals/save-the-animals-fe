@@ -4,14 +4,20 @@ import CampaignHolder from "./Campaign.axios";
 
 
 const Member = styled.div`
-  border: 1px solid black;
-  border-radius: 5px;
-  max-width: 400px;
-  margin: 1rem;
-  h2 {
+    width: 400px;
+  margin: 100px auto 50px;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  text-align: left;
+  background-color: #80AB82;
+  border: 2px solid #773f1a;
+  border-radius: 8px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Bitter', serif;
+    h2 {
     border-bottom: 1px solid black;
     padding: 0 1rem;
-  }
+    }
   h5 {
     margin: 0.5rem;
   }
