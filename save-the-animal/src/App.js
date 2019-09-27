@@ -34,6 +34,7 @@ function App() {
      <Route path="/campaign" component={FormikCampaign}/>
 
 </div>
+</div>
 
   );
 }
