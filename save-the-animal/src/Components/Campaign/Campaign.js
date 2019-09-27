@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components"
 import CampaignHolder from "./Campaign.axios";
+import Navigation from '../Navigation';
 
 
 const Member = styled.div`
@@ -26,6 +27,7 @@ export default function(props) {
 
   return (
 <div>
+  <Navigation/>
     <Member>
         <h2>{props.details.campaign}</h2>
         <h5>deadline: {props.details.deadline}</h5>
