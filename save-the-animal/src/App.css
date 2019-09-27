@@ -1,38 +1,7 @@
 .App {
   text-align: center;
- 
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #095221;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-
-}
+  background-color: black;
+ }
 
 .navbar {
   width: 100%;
@@ -45,13 +14,11 @@
 /* Navbar links */
 .navbar a {
   display:flex;
-  
   text-align: center;
   padding: 12px;
   color: white;
   text-decoration: none;
   font-size: 15px;
-
 }
 
 /* Navbar links on mouse-over */
@@ -65,15 +32,11 @@
 }
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 500x) {
+@media screen and (max-width: 500px) {
   .navbar a {
     float: none;
     display:flex;
   }
-}
-
-.App {
-  text-align: center;
 }
 
 .loginForm {
@@ -83,11 +46,10 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   text-align: left;
   background-color: #80AB82;
-  border: 2px solid #F7F7F2;
+  border: 2px solid #773f1a;
   border-radius: 8px;
   font-family: 'Josefin Sans', sans-serif;
   font-family: 'Bitter', serif;
-
 }
 
 .error {
@@ -122,4 +84,4 @@ textarea {
 .field {
   margin: 20px auto;
   
-  }
+}

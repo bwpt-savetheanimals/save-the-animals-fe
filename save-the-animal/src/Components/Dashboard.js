@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
 import Navigation from './Navigation'
 
 
@@ -49,7 +48,7 @@ function Dashboard() {
         <Navigation/>
         <StyledDiv>
            <Link to='donate'><StyledButton>Donate</StyledButton></Link>
-         <Link to='/Cdashboard'><StyledButton>Campaigns</StyledButton></Link>
+           <Link to='/Cdashboard'><StyledButton>Campaigns</StyledButton></Link>
          </StyledDiv>
         </div>
     );

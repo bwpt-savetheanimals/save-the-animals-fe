@@ -4,7 +4,7 @@ import MembersList from './CampaignList';
 import AddEditMember from './AddEditCampaign';
 
 
-const initialTeam = [{campaign: "Monkeys", deadline: "02/02/2002" }];
+const initialTeam = [{campaign: "WildLife", deadline: "02/02/2020" }];
 
 export default function Data(props) {
 	const [ membersList, setMembersList ] = useState(initialTeam);

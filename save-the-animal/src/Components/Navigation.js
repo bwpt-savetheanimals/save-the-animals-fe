@@ -16,21 +16,12 @@ return (
      
     <div className="navbar">
 
-        <NavLink to ="/">Home</NavLink>
-    <NavLink to="/Signup">Sign Up</NavLink>
-      
+      <NavLink to ="/">Home</NavLink>
+      {/* <NavLink to="/Signup">Sign Up</NavLink>
       <NavLink to="/LogIn">Login</NavLink>
-     
-      <NavLink to="/CampaignLogin">CampaignLogin</NavLink>
-      
-      
-     
+      <NavLink to="/CampaignLogin">CampaignLogin</NavLink> */}
       <Link to="/dashboard">Dashboard</Link>
-     
-      
       <NavLink  to="/Donate">Donate</NavLink>
-      
-     
       <NavLink  to="/Chat">Send Us A Question</NavLink>
      
     </div>

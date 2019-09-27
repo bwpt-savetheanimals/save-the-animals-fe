@@ -88,6 +88,7 @@ export default () => {
   ) : (
       <div> <Navigation/>
     <div style={{ textAlign: 'center', margin: '30vh auto', width: '70%' }}>
+      <div className="loginForm">
       <form onSubmit={event => handleSubmit(event)}>
         <input id="name" onChange={e => setNameInput(e.target.value.trim())} required placeholder="What is your name .." /><br />
         <input id="question" onChange={e => setRoom(e.target.value.trim())} placeholder="What Is Your question .." /><br />
@@ -96,6 +97,7 @@ export default () => {
       Submit
     </button>
       </form>
+      </div>
     </div>
     </div>
   );

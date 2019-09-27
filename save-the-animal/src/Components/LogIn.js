@@ -12,8 +12,7 @@ margin: 15px auto;
 `;
 
 const StyledButton = styled.button`
-
- color: #46792f;
+	color: #46792f;
     text-decoration: none;
     background: #ffffff;
     padding: 1.8%;
