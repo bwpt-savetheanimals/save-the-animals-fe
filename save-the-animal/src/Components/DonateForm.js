@@ -2,33 +2,62 @@ import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Navigation from './Navigation'
+import styled from 'styled-components';
 
+const StyledField = styled(Field)`
+padding: 10px;
+margin: 15px auto;
+`;
 
+const StyledButton = styled.button`
+    color: #46792f;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 1.8%;
+    border: 2px solid #773f1a;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    margin: 5px;
+    font-size: 1.4rem;
+    border-radius: 2px;
+        &:hover {
+        color: #ffffff;
+        background: #007ba7;
+        border-color: #007ba7;
+        cursor: pointer;
+        transition: all 0.4s ease 0s;
+        }
+`
 
-
-function DonationForm(errors,touched) {
+function DonationForm(errors, touched) {
   return (
-  <div> <Navigation/>
+    <div>
+      <Navigation />
+      <div className="loginForm">
 
-       <Form>
-         {touched.username && errors.username && <p>{errors.username}</p>}
-      <Field type="text" name="username" placeholder="Username" />
-      {touched.donation && errors.donation && <p>{errors.donation}</p>}
-      <Field type="number" name="donation" placeholder="donation" />
-      {touched.campaign && errors.campaign && <p>{errors.campaign}</p>}
-      <Field type="text" name="campaign" placeholder="campaign" />
-      <Field type="text" name="cardNumber" placeholder="Card Number" />
-      {touched.cardNumber && errors.cardNumber  && <p>{errors.cardNumber}</p>}
-      <Field type="date" name="expiryDate" placeholder="Expiration Date" />
-      {touched.expiryDate && errors.expiryDate  && <p>{errors.expiryDate}</p>}
-      <Field type="text" name="CVC/CVV" placeholder="CVC/CVV Number" />
-      {touched.cvc && errors.cvc  && <p>{errors.cvc}</p>}
+        <Form>
+          {touched.username && errors.username && <p>{errors.username}</p>}
+          <StyledField type="text" name="username" placeholder="Username" />
+          {touched.donation && errors.donation && <p>{errors.donation}</p>}
+          <StyledField type="number" name="donation" placeholder="donation" />
+          {touched.campaign && errors.campaign && <p>{errors.campaign}</p>}
+          <StyledField type="text" name="campaign" placeholder="campaign" />
+          <StyledField type="text" name="cardNumber" placeholder="Card Number" />
+          {touched.cardNumber && errors.cardNumber && <p>{errors.cardNumber}</p>}
+          <StyledField type="date" name="expiryDate" placeholder="Expiration Date" />
+          {touched.expiryDate && errors.expiryDate && <p>{errors.expiryDate}</p>}
+          <StyledField type="text" name="CVC/CVV" placeholder="CVC/CVV Number" />
+          {touched.cvc && errors.cvc && <p>{errors.cvc}</p>}
 
-      <button type="submit" onClick={() => alert('Thank You For Your Donation')}>
-      Donate!
-    </button>
+          <StyledButton type="submit" onClick={() => alert('Thank You For Your Donation')}>
+            Donate!
+          </StyledButton>
 
-    </Form></div>
+        </Form>
+      </div>
+    </div>
   );
 }
 const FormikDonationForm = withFormik({
@@ -65,16 +94,9 @@ validationSchema: Yup.object().shape({
       cvc : Yup.string()
       .min (3)
       .required("Please Enter Valid CVC/CVV Number"),
-
-
   }),
 
-
-  
-
-  
-  
-    })(DonationForm);
+})(DonationForm);
 
     
 export default FormikDonationForm;
