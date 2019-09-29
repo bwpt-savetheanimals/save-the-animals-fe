@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 const Div = styled.div`
   width: 400px;
@@ -15,16 +16,22 @@ const Div = styled.div`
 `
 
 function CampaignCard(props) {
-  console.log(props);
+  console.log('cc' ,props);
+const setMemberToEdit = props
+  
   return (
     <Div>
       <b>Campaign:</b> {props.campaign.cam_name}
       <b>Urgency:</b> {props.campaign.cam_urgency}
       <b>Location:</b> {props.campaign.loc_name}
-
+      {/* <Link to={`/Cdasboard/${props.id}`} onChange={() => deleteMember(props.membersList)} key={props.id}>Delete</Link> */}
       {/* <p> {props.loc_name} </p>
       <p> {props.cam_urgency} </p> */}
+      <Link to='/edit/' onClick={() => setMemberToEdit(props.member)} key={props.id} />
     </Div>
+   
+    
+  
   );
 }
 

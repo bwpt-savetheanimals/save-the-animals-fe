@@ -45,7 +45,7 @@ function SignUp({ status, touched, errors }) {
 	return (
     <div>
     <Navigation/>
-		<div className="loginForm">
+		<div className="signupForm">
 			<Form>
 				<h1>Sign Up</h1>
 				<div>

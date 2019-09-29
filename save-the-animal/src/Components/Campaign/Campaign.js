@@ -27,7 +27,7 @@ export default function(props) {
 
   return (
 <div>
-  <Navigation/>
+  {/* <Navigation/> */}
     <Member>
         <h2>{props.details.campaign}</h2>
         <h5>deadline: {props.details.deadline}</h5>

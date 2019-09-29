@@ -14,7 +14,7 @@ export default function Data(props) {
 		console.log(editedMember);
 		const newMembersList = [];
 		membersList.forEach((member) => {
-			console.log(member); 
+			console.log('data' ,member); 
 			if (editedMember.id === member.id) {
 				return (newMembersList[member.id] = editedMember);
 			} else {
