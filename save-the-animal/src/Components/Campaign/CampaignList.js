@@ -23,7 +23,7 @@ const Style = styled.div`
 export default function MembersList(props) {
 
 
-	const { setMemberToEdit, membersList, deleteMember } = props;
+	const { setMemberToEdit, membersList  } = props;
 	return (
 		<Style>
 			{membersList.map((member) => (
@@ -31,7 +31,7 @@ export default function MembersList(props) {
 					<Link to={`/edit/${member.id}`} onClick={() => setMemberToEdit(member)}>
 						Edit
 					</Link>
-					<button onClick={() => deleteMember(membersList)} key={props.id}>Delete</button>
+					{/* <button onClick={() => deleteMember(membersList)} key={props.id}>Delete</button> */}
 					
 					
 				</Member>

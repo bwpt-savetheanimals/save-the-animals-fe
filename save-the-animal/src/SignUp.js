@@ -6,6 +6,7 @@ import axios from 'axios';
 import './App.css';
 import Navigation from './Components/Navigation';
 import history from './history'
+import monkey from "./Components/Images/selfie-monkey.jpeg"
 
 const StyledField = styled(Field)`
 padding: 10px;
@@ -15,9 +16,9 @@ margin: 15px auto;`
 const StyledButton = styled.button`
  color: #46792f;
     text-decoration: none;
-    background: #ffffff;
+    background: #1DACD6;
     padding: 1.8%;
-    border: 2px solid #773f1a;
+    border: 2px solid #1DACD6;
     display: inline-block;
     transition: all 0.4s ease 0s;
     margin-top: 3%;
@@ -33,6 +34,22 @@ const StyledButton = styled.button`
         transition: all 0.4s ease 0s;
         }
 `
+const DIV = styled.div`
+display: flex;
+ flex-direction: row wrap;
+ justify-content: center;
+ align-items: center;
+ `
+
+const Image = styled.img`
+width: 100%
+max-width: 400px;
+text-align: center;
+  margin: 100px auto 50px;
+   border: 1px solid #773f1a;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+`
 
 function SignUp({ status, touched, errors }) {
 	// console.log(status);
@@ -45,6 +62,9 @@ function SignUp({ status, touched, errors }) {
 	return (
     <div>
     <Navigation/>
+	<DIV>
+	<Image src={monkey} alt=""/>
+	
 		<div className="loginForm">
 			<Form>
 				<h1>Sign Up</h1>
@@ -68,6 +88,7 @@ function SignUp({ status, touched, errors }) {
 							<StyledButton type="submit">Submit</StyledButton>
 			</Form>
 		</div>
+		</DIV>
     </div>
 	);
 }
