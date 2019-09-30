@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import Axios from 'axios';
 import styled from 'styled-components';
 import Navigation from './Navigation';
+import lion from "./Images/lion.jpeg";
 
 
 const StyledField = styled(Field)`
@@ -14,7 +15,7 @@ margin: 15px auto;
 const StyledButton = styled.button`
 	color: #46792f;
     text-decoration: none;
-    background: #ffffff;
+    background: #1DACD6;
     padding: 1.8%;
     border: 2px solid #773f1a;
     display: inline-block;
@@ -32,6 +33,37 @@ const StyledButton = styled.button`
         transition: all 0.4s ease 0s;
         }
 `
+// const DIV = styled.div`
+// display: flex;
+//  flex-direction: row wrap;
+//  justify-content: flex-start;
+//  align-items: flex-start;
+//  `
+
+const Image = styled.img`
+width: 100%
+max-width: 200px;
+ border-radius: 8px;
+text-align: center;
+  margin: 20px auto 20px;
+   border: 1px solid #773f1a;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  `
+
+//  const Login = styled.div`
+//   width: 100%;
+//   max-width: 500px;
+//   margin: 20px auto 20px;
+//   padding: 20px;
+//   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+//   text-align: left;
+//   background-color: #97AD56;
+//   border: 2px solid #773f1a;
+//   border-radius: 8px;
+//   font-family: 'Josefin Sans', sans-serif;
+//   font-family: 'Bitter', serif;
+//   `
 
 
 
@@ -50,6 +82,8 @@ function LoginForm({ errors, touched, status }) {
 	return (
 		<div>
 			<Navigation />
+			<div>
+			<Image src={lion} alt=""/>
 
 			<div className="loginForm">
 				{/* All Data can be changed  */}
@@ -75,6 +109,7 @@ function LoginForm({ errors, touched, status }) {
                     </div>
                 ))} */}
 				</Form>
+			</div>
 			</div>
 		</div>
 	);

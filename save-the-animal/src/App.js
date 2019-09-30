@@ -19,7 +19,8 @@ import CampaignLogin from './Components/CampaignLogin';
 function App() {
   return (
 
-   <div className="background" style={{backgroundColor: "black",  height:"800px"}}>
+   <div className="background" style={{backgroundColor: "#B9BEA5",  height:"900px", marginTop:"-20px" }}>
+    <div>
     <div className="App">
   
        <Route exact path="/" component={WelcomePage} />
@@ -33,6 +34,7 @@ function App() {
      <Route path="/campaign" component={FormikCampaign}/>
 
   </div>
+ </div>
  </div>
   );
 }

@@ -3,7 +3,8 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Axios from "axios";
 import styled from 'styled-components';
-import Navigation from './Navigation'
+import Navigation from './Navigation';
+import tigers from './Images/tigers.jpeg';
 
 
 const StyledField = styled(Field)`
@@ -14,7 +15,7 @@ margin: 15px auto;
 const StyledButton = styled.button`
  color: #46792f;
     text-decoration: none;
-    background: #ffffff;
+    background: #1DACD6;
     padding: 1.8%;
     border: 2px solid #773f1a;
     display: inline-block;
@@ -33,6 +34,17 @@ const StyledButton = styled.button`
         }
 `
 
+const Image = styled.img`
+width: 100%
+max-width: 400px;
+text-align: center;
+  margin: 100px auto 50px;
+   border: 1px solid #773f1a;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px #773f1a, 0 1px 2px rgba(0, 0, 0, 0.24);
+`
+
+
 
 
 function CampaignLoginForm({ errors, touched, status }) {
@@ -45,6 +57,8 @@ function CampaignLoginForm({ errors, touched, status }) {
     return (
 <div>
         <Navigation/>
+        	<Image src={tigers} alt=""/>
+
 
         <div className="loginForm">
             {/* All Data can be changed  */}

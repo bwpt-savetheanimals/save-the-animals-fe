@@ -12,7 +12,7 @@ margin: 15px auto;
 const StyledButton = styled.button`
     color: #46792f;
     text-decoration: none;
-    background: #ffffff;
+    background: #1DACD6;
     padding: 1.8%;
     border: 2px solid #773f1a;
     display: inline-block;
